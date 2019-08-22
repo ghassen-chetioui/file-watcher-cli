@@ -31,7 +31,7 @@ public class Runner {
             converter = PathConverter.class,
             validateValueWith = PathValidator.class
     )
-    Path path = Paths.get(".");
+    private Path path = Paths.get(".");
 
     private void run() {
         new FileWatcher(path).run();
