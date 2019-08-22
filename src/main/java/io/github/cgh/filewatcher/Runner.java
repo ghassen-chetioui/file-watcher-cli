@@ -1,4 +1,4 @@
-package io.github.cgh;
+package io.github.cgh.filewatcher;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
