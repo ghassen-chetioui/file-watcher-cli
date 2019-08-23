@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
-class ReporterTest implements WithAssertions {
+class AnalyserTest implements WithAssertions {
 
     @Test
     void should_detect_created_files() {
@@ -21,7 +21,7 @@ class ReporterTest implements WithAssertions {
             put(Paths.get("file2"), "2");
         }};
 
-        assertThat(Reporter.created(previous, current)).containsExactly(Paths.get("file2"));
+        assertThat(Analyser.created(previous, current)).containsExactly(Paths.get("file2"));
     }
 
     @Test
@@ -34,7 +34,7 @@ class ReporterTest implements WithAssertions {
             put(Paths.get("dir/file1"), "1");
         }};
 
-        assertThat(Reporter.created(previous, current)).isEmpty();
+        assertThat(Analyser.created(previous, current)).isEmpty();
     }
 
     @Test
@@ -47,7 +47,7 @@ class ReporterTest implements WithAssertions {
             put(Paths.get("file1"), "1");
         }};
 
-        assertThat(Reporter.deleted(previous, current)).containsExactly(Paths.get("file2"));
+        assertThat(Analyser.deleted(previous, current)).containsExactly(Paths.get("file2"));
     }
 
     @Test
@@ -60,7 +60,7 @@ class ReporterTest implements WithAssertions {
             put(Paths.get("dir/file1"), "1");
         }};
 
-        assertThat(Reporter.deleted(previous, current)).isEmpty();
+        assertThat(Analyser.deleted(previous, current)).isEmpty();
     }
 
     @Test
@@ -74,7 +74,7 @@ class ReporterTest implements WithAssertions {
             put(Paths.get("file3"), "2");
         }};
 
-        assertThat(Reporter.modified(previous, current)).containsExactly(Paths.get("file1"));
+        assertThat(Analyser.modified(previous, current)).containsExactly(Paths.get("file1"));
     }
 
     @Test
@@ -86,8 +86,8 @@ class ReporterTest implements WithAssertions {
             put(Paths.get("dir/file1"), "1");
         }};
 
-        assertThat(Reporter.moved(previous, current)).hasSize(1);
-        Map.Entry<Path, Path> entry = Reporter.moved(previous, current).entrySet().iterator().next();
+        assertThat(Analyser.moved(previous, current)).hasSize(1);
+        Map.Entry<Path, Path> entry = Analyser.moved(previous, current).entrySet().iterator().next();
         assertThat(entry.getKey()).isEqualTo(Paths.get("dir/file1"));
         assertThat(entry.getValue()).isEqualTo(Paths.get("file1"));
     }

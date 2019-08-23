@@ -31,7 +31,10 @@ class FileWatcher {
 
     private void watch() {
         Map<Path, String> currentMd5ByPath = currentMd5ByFile();
-        Reporter.report(md5ByPath, currentMd5ByPath);
+        Reporter.created(Analyser.created(this.md5ByPath, currentMd5ByPath));
+        Reporter.modified(Analyser.modified(this.md5ByPath, currentMd5ByPath));
+        Reporter.moved(Analyser.moved(this.md5ByPath, currentMd5ByPath));
+        Reporter.deleted(Analyser.deleted(this.md5ByPath, currentMd5ByPath));
         md5ByPath.clear();
         md5ByPath.putAll(currentMd5ByPath);
     }
