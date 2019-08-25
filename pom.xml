@@ -21,6 +21,7 @@
 
         <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
         <maven-shade-plugin.version>3.2.1</maven-shade-plugin.version>
+        <native-image-maven-plugin.version>19.2.0</native-image-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -69,6 +70,23 @@
                         <goals>
                             <goal>shade</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.oracle.substratevm</groupId>
+                <artifactId>native-image-maven-plugin</artifactId>
+                <version>${native-image-maven-plugin.version}</version>
+                <configuration>
+                    <imageName>file-watcher</imageName>
+                    <buildArgs>--no-fallback</buildArgs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>native-image</goal>
+                        </goals>
+                        <phase>package</phase>
                     </execution>
                 </executions>
             </plugin>
