@@ -1,23 +1,33 @@
 [
-{
-  "name":"com.beust.jcommander.validators.NoValidator",
-  "methods":[{"name":"<init>","parameterTypes":[] }]
-},
-{
-  "name":"io.github.cgh.filewatcher.Runner",
-  "allDeclaredFields":true,
-  "allDeclaredMethods":true
-},
-{
-  "name":"io.github.cgh.filewatcher.Runner$PathConverter",
-  "allDeclaredConstructors":true
-},
-{
-  "name":"io.github.cgh.filewatcher.Runner$PathValidator",
-  "methods":[{"name":"<init>","parameterTypes":[] }]
-},
-{
-  "name":"java.nio.file.Path",
-  "allDeclaredFields":true
-}
+  {
+    "name": "com.beust.jcommander.validators.NoValidator",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "io.github.cgh.filewatcher.Runner",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.github.cgh.filewatcher.Runner$PathConverter",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "io.github.cgh.filewatcher.Runner$PathValidator",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "java.nio.file.Path",
+    "allDeclaredFields": true
+  }
 ]

@@ -16,7 +16,6 @@ public class Runner {
     }
 
     static public class PathValidator implements IValueValidator<Path> {
-
         @Override
         public void validate(String name, Path value) throws ParameterException {
             File file = value.toFile();

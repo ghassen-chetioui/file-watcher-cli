@@ -79,7 +79,6 @@
                 <version>${native-image-maven-plugin.version}</version>
                 <configuration>
                     <imageName>file-watcher</imageName>
-                    <buildArgs>--no-fallback</buildArgs>
                 </configuration>
                 <executions>
                     <execution>
